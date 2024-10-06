@@ -64,6 +64,13 @@ public class Account {
         this.loan = loan;
     }
 
+    public void takeLoan (Loan loan) {
+
+        this.loan = loan;
+        addToBalance(loan.getAmount());
+
+    }
+
     public List<Transaction> getTransactionHistory() {
         return transactionHistory;
     }
@@ -84,6 +91,11 @@ public class Account {
         return balance;
     }
 
+    public void addToBalance(float amount) {
+
+        this.balance += amount;
+    }
+
     public void setBalance(float balance) {
         this.balance = balance;
     }
@@ -97,5 +109,9 @@ public class Account {
 
     public String getPassword() {
         return password;
+    }
+
+    public Client getCl() {
+        return owner;
     }
 }
