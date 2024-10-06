@@ -11,14 +11,20 @@ public class Client {
     private ClientType clientType;
 //      trzeba dodac jeszcze ID!
 
-    public Client(String firstName, String lastName, String phoneNumber, int age, Address address, Account account, ClientType clientType) {
+    private String personalID;
+
+    public Client(String firstName, String lastName, String personalID, int age, String phoneNumber, Address address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.age = age;
         this.address = address;
-        this.account = account;
-        this.clientType = clientType;
+
+        if(age<18){
+            clientType = new Child();
+        }
+        else clientType = new  Adult();
+
     }
 
     public void setFirstName(String firstName) {
