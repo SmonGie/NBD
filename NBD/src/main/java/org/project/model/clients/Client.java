@@ -16,6 +16,7 @@ public class Client {
     public Client(String firstName, String lastName, String personalID, int age, String phoneNumber, Address address) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.personalID = personalID;
         this.phoneNumber = phoneNumber;
         this.age = age;
         this.address = address;
@@ -86,26 +87,23 @@ public class Client {
     public String getInfo() {
 
         return "Klient: " + firstName + " " + lastName +
-                //"\n ID: " + personalID +
+                "\n ID: " + personalID +
                 "\n Wiek: " + age +
                 "\n Numer telefonu: " + phoneNumber + "\n " + clientType.getInfo();
 
     }
 
-    //    @Override
-//    public boolean equals(Object obj) {
-//        if (this == obj) {
-//            return true;
-//        }
-//
-////        if (!(obj instanceof Client)) {
-////            return false;
-////        }
-//
-//        Client other = (Client) obj;
-//
-//        return this.personalID.equals(other.personalID);
-//    }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Client)) {
+            return false;
+        }
+        Client other = (Client) obj;
+        return this.personalID != null && this.personalID.equals(other.personalID);
+    }
     public int applyLimits() {
         return clientType.applyLimits();
     }
