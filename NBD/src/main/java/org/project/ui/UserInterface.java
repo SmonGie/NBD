@@ -166,7 +166,7 @@ public class UserInterface {
 
 
         Address address = new Address(city, street, number);
-        Client client = new Client(firstName, lastName, ID, birthYear,phoneN, address);
+        Client client = new Client(firstName, lastName, birthYear,phoneN, address);
         Account account = new Account(client);
         client.setAccount(account);
 
@@ -250,8 +250,8 @@ public class UserInterface {
                     loanScreen(signedUser);
                     break;
                 case "3":
-                    System.out.println(signedUser.getTransactionHistory());
-                    accountScreen(signedUser);
+                    //   System.out.println(signedUser.getTransactionHistory());
+                    //accountScreen(signedUser);
                     break;
                 case "q":
                     setSignedUser(null);
@@ -444,7 +444,7 @@ public class UserInterface {
                 case 'T':
                 case 't':
                     System.out.println("Pożyczka została zatwierdzona.");
-                    Loan loan = new Loan(8, 365, amount, signedUser);
+                    Loan loan = new Loan(8, 365, amount);
                     signedUser.takeLoan(loan);
                     lR.addLoan(loan);
                     accountScreen(signedUser);

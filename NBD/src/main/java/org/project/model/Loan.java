@@ -1,22 +1,23 @@
 package org.project.model;
 
-public class Loan {
-    public Loan(int interestRate, int duration, float amount, Account loaner) {
+import jakarta.persistence.Embeddable;
 
+@Embeddable
+public class Loan {
+    private float amount;
+    private int duration;
+    private final int interestRate;
+
+    public Loan(int interestRate, int duration, float amount) {
         this.amount = amount;
         this.interestRate = interestRate;
         this.duration = duration;
-        this.loanerl = loaner;
     }
-
-
-    private Account loanerl;
-
-    private float amount;
-
-    private int duration;
-
-    private final int interestRate;
+    public Loan() {
+        this.interestRate = 0;
+        this.duration = 0;
+        this.amount = 0;
+    }
 
     public float getAmount() {
         return amount;
@@ -27,10 +28,7 @@ public class Loan {
     }
 
     public String getInfo() {
-
         return " \n Kwota pozyczki: " + amount + " \n Oprocentowanie: " + interestRate
                 + "% \n Dlugosc pozyczki: " + duration + " dni";
-
     }
-
 }

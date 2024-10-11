@@ -1,5 +1,8 @@
 package org.project.model.clients;
 
+import jakarta.persistence.Embeddable;
+
+@Embeddable
 public class Address {
 
     private String city;
@@ -11,7 +14,8 @@ public class Address {
         this.street = street;
         this.number = number;
     }
-
+    public Address() {
+    }
     public String getCity() {
         return city;
     }

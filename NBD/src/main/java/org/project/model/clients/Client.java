@@ -1,31 +1,52 @@
 package org.project.model.clients;
 
+import jakarta.persistence.*;
+import org.hibernate.annotations.GenericGenerator;
 import org.project.model.Account;
 
+@Entity
+@Table(name = "Client")
 public class Client {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "Id", unique = true, nullable = false)
+    private Long Id;  // Change to String for UUID
 
     private String firstName, lastName, phoneNumber;
     private int age;
+    @Embedded
     private Address address;
+    @OneToOne
+    @JoinColumn(name = "account_id", referencedColumnName = "Id")
     private Account account;
+    @Transient
     private ClientType clientType;
-//      trzeba dodac jeszcze ID!
 
-    private String personalID;
+    public Client() {
+    }
 
-    public Client(String firstName, String lastName, String personalID, int age, String phoneNumber, Address address) {
+    public Client(String firstName, String lastName, int age, String phoneNumber, Address address) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.personalID = personalID;
         this.phoneNumber = phoneNumber;
         this.age = age;
         this.address = address;
 
-        if(age<18){
+        if (age < 18) {
             clientType = new Child();
+        } else {
+            clientType = new Adult();
         }
-        else clientType = new  Adult();
+    }
 
+
+    //public String getPersonalID() {
+      //  return personalID;
+    //}
+
+    public void setId(Long Id) {
+        this.Id = Id;
     }
 
     public void setFirstName(String firstName) {
@@ -85,27 +106,13 @@ public class Client {
     }
 
     public String getInfo() {
-
         return "Klient: " + firstName + " " + lastName +
-                "\n ID: " + personalID +
+                "\n ID: " + Id +
                 "\n Wiek: " + age +
                 "\n Numer telefonu: " + phoneNumber + "\n " + clientType.getInfo();
-
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof Client)) {
-            return false;
-        }
-        Client other = (Client) obj;
-        return this.personalID != null && this.personalID.equals(other.personalID);
-    }
     public int applyLimits() {
         return clientType.applyLimits();
     }
-
 }
