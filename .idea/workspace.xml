@@ -5,18 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37f186eb-41cf-4b18-a807-ebc0a83dd1a3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NBD/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/NBD/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NBD/src/main/java/org/project/model/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/NBD/src/main/java/org/project/model/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NBD/src/main/java/org/project/model/Loan.java" beforeDir="false" afterPath="$PROJECT_DIR$/NBD/src/main/java/org/project/model/Loan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NBD/src/main/java/org/project/model/clients/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/NBD/src/main/java/org/project/model/clients/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NBD/src/main/java/org/project/model/clients/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/NBD/src/main/java/org/project/model/clients/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NBD/src/main/java/org/project/ui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/NBD/src/main/java/org/project/ui/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NBD/src/main/java/org/project/ui/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/NBD/src/main/java/org/project/ui/UserInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NBD/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/NBD/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NBD/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/NBD/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +48,7 @@
   &quot;keyToString&quot;: {
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;Docker.NBD.db: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.NBD[db, pgadmin]: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;JAR Application.NBD-1.0-SNAPSHOT.jar.executor&quot;: &quot;Run&quot;,
     &quot;Maven.NBD [clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.NBD [install].executor&quot;: &quot;Run&quot;,
@@ -87,7 +78,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Docker.NBD[db, pgadmin]: Compose Deployment">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.project.ui.Main" />
       <module name="NBD" />
@@ -105,12 +96,14 @@
       <option name="JAR_PATH" value="$PROJECT_DIR$/NBD/target/NBD-1.0-SNAPSHOT.jar" />
       <method v="2" />
     </configuration>
-    <configuration name="NBD.db: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="NBD[db, pgadmin]: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
+          <option name="envFilePath" value="" />
           <option name="services">
             <list>
               <option value="db" />
+              <option value="pgadmin" />
             </list>
           </option>
           <option name="sourceFilePath" value="NBD/docker-compose.yml" />
@@ -124,10 +117,15 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Docker.NBD[db, pgadmin]: Compose Deployment" />
+      <item itemvalue="JAR Application.NBD-1.0-SNAPSHOT.jar" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.NBD[db, pgadmin]: Compose Deployment" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Docker.NBD.db: Compose Deployment" />
         <item itemvalue="JAR Application.NBD-1.0-SNAPSHOT.jar" />
       </list>
     </recent_temporary>
@@ -154,6 +152,12 @@
       <workItem from="1728628604566" duration="3230000" />
       <workItem from="1728632343419" duration="1712000" />
       <workItem from="1728680140552" duration="1572000" />
+      <workItem from="1728681730536" duration="149000" />
+      <workItem from="1728738342422" duration="91000" />
+      <workItem from="1728924159507" duration="405000" />
+      <workItem from="1728924593526" duration="473000" />
+      <workItem from="1728935933324" duration="170000" />
+      <workItem from="1728936211228" duration="102000" />
     </task>
     <servers />
   </component>
